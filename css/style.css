@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+:root{
+    --color-fondo: #F3F5FC;
+
+    --color-boton-uno: #123570;
+    --color-boton-dos: #D8DFE7;
+    --color-texto-uno: #D8DFE8;
+
+    --fuente-principal: font-family: "Inter", sans-serif;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: var(--color-fondo);
+    font-family: var(--fuente-principal);
+    display: flex;
+}
+
+.contenedor{
+    display: flex;
+    width: 100%;
+    gap: 10px;
+}
+
+.contenedor__logo, .contenedor__entrada, .contenedor__salida{
+    /*arriba derecha abajo izquierda*/
+    /*padding: 7.5rem 1.25rem 0.625rem 0.625rem;*/
+    border: 1px solid;
+    width: 100%;
+}
+
+.contenedor__logo{
+    width: 102px;
+    padding: 40px;
+    width: 10%;
+}
+
+.contenedor__entrada{
+    width: 50%;
+    padding: 168px 40px 40px 20px;
+    display: flex;
+    flex-direction: column;
+}
+textarea{
+    width: 100%;
+    height: 150px;
+    border: 1px solid var(--color-fondo);
+    background-color: var(--color-fondo);
+    font-size: 32px;
+    font-weight: 400;
+    color: darkblue;
+    resize: none;
+}
+.contenedor__entrada__notas{
+    display: flex;
+    flex-direction: column;
+}
+.contenedor__entrada__nota__img{
+    width: 25px;
+    padding: 0;
+}
+.contenedor__entrada__nota{
+    padding: 0 0 10px 55px;
+    font-size: 12px;
+    font-weight: 400;
+    color: #6B7178;
+}
+
+.contenedor__entrada__botones{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+.contenedor__entrada__boton__encriptar, .contenedor__entrada__boton__desencriptar{
+    width: 328px;
+    height: 67px;
+    border: 1px solid var(--color-boton-uno);
+    font-size: 16px;
+    border-radius: 24px;
+
+}
+
+.contenedor__entrada__boton__encriptar{
+    background-color: var(--color-boton-uno);
+    color: var(--color-texto-uno);
+}
+
+.contenedor__entrada__boton__desencriptar{
+    background-color: var(--color-boton-dos);
+    color: var(--color-boton-uno);
+}
+
+.contenedor__salida{
+    width: 40%;
+    padding: 40px 40px 40px 40px;
+}
+
+.contenedor__salida__fondo{
+    background-color: white;
+    border-radius: 32px;
+    padding: 40px 10px 40px 10px;
+}
