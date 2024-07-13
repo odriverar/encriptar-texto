@@ -7,7 +7,7 @@
     --color-boton-dos: #D8DFE7;
     --color-texto-uno: #D8DFE8;
 
-    --fuente-principal: font-family: "Inter", sans-serif;
+    --fuente-principal: "Inter", sans-serif;
 }
 
 *{
@@ -30,7 +30,6 @@ body{
 .contenedor__logo, .contenedor__entrada, .contenedor__salida{
     /*arriba derecha abajo izquierda*/
     /*padding: 7.5rem 1.25rem 0.625rem 0.625rem;*/
-    border: 1px solid;
     width: 100%;
 }
 
@@ -41,31 +40,42 @@ body{
 }
 
 .contenedor__entrada{
-    width: 50%;
+    width: 65%;
     padding: 168px 40px 40px 20px;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
 }
-textarea{
+
+.contenedor__entrada__fondo{
+    width: 80%;
+    padding: 24px;
+}
+
+#texto-entrada{
     width: 100%;
-    height: 150px;
+    /*height: 150px;*/
     border: 1px solid var(--color-fondo);
     background-color: var(--color-fondo);
     font-size: 32px;
     font-weight: 400;
-    color: darkblue;
+    line-height: 150%;
+    color: var(--color-boton-uno);
     resize: none;
 }
+
+#texto-entrada::placeholder{
+    color: var(--color-boton-uno);
+}
+
 .contenedor__entrada__notas{
     display: flex;
-    flex-direction: column;
+    gap: 8px;
+    padding-bottom: 16px;
 }
 .contenedor__entrada__nota__img{
-    width: 25px;
-    padding: 0;
+    width: 16px;
 }
 .contenedor__entrada__nota{
-    padding: 0 0 10px 55px;
     font-size: 12px;
     font-weight: 400;
     color: #6B7178;
@@ -92,18 +102,216 @@ textarea{
     color: var(--color-texto-uno);
 }
 
+.contenedor__entrada__boton__encriptar:hover{
+    cursor: pointer;
+    background-color: white;
+    color: var(--color-boton-uno);
+}
+
 .contenedor__entrada__boton__desencriptar{
     background-color: var(--color-boton-dos);
     color: var(--color-boton-uno);
 }
 
+.contenedor__entrada__boton__desencriptar:hover{
+    cursor: pointer;
+    background-color: white;
+    color: var(--color-boton-uno);
+}
+
 .contenedor__salida{
-    width: 40%;
+    width: 25%;
     padding: 40px 40px 40px 40px;
 }
 
 .contenedor__salida__fondo{
+    width: 400px;
+    height: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-color: white;
     border-radius: 32px;
     padding: 40px 10px 40px 10px;
+    gap: 32px;
+    box-shadow:
+    inset 0 -3em 3em rgba(0, 0, 0, 0.0),
+    0 0 0 2px rgb(255, 255, 255),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.4);
+}
+
+.contenedor__salida__fondo__txt1{
+    font-family: var(--fuente-principal);
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px;
+    line-height: 120%;
+}
+
+.contenedor__salida__fondo__txt2{
+    font-family: var(--fuente-principal);
+    font-size: 16px;
+    padding: 15px;
+    text-align: center;
+    line-height: 150%;
+}
+
+#texto-salida{
+    width: 336px;
+    height: 781px;
+    border: 1px solid white;
+    resize: none;
+}
+
+.contenedor__salida__fondo__boton{
+    width: 336px;
+    height: 67px;
+    border: 1px solid var(--color-boton-uno);
+    font-size: 16px;
+    border-radius: 24px;
+    background-color: white;
+    color: var(--color-boton-uno);
+}
+
+.contenedor__salida__fondo__boton:hover{
+    cursor: pointer;
+    background-color: var(--color-boton-uno);
+    color: white;
+}
+
+@media(max-width: 1024px){
+    .contenedor{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .contenedor__entrada{
+        width: 100%;
+        padding: 20px 0px 0px 0px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .contenedor__entrada__boton__encriptar, .contenedor__entrada__boton__desencriptar{
+        width: 332px;
+        height: 67px;
+        border: 1px solid var(--color-boton-uno);
+        font-size: 16px;
+        border-radius: 24px;
+        padding: 24px;
+    }
+
+    .contenedor__entrada__fondo{
+        width: 100%;
+        padding: 34px;
+    }
+
+    .contenedor__salida{
+        width: 90%;
+        padding: 40px 30px 40px 30px;
+    }
+
+    .contenedor__salida__fondo{
+        width: auto;
+        height: 343px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        border-radius: 32px;
+        padding: 10px 10px 10px 10px;
+        gap: 32px;
+    }
+
+    #texto-salida{
+        width: 624px;
+        height: 180px;
+        border: 1px solid white;
+        resize: none;
+    }
+
+    .contenedor__salida__fondo__boton{
+        width: 624px;
+        height: 67px;
+        border: 1px solid var(--color-boton-uno);
+        font-size: 24px;
+        border-radius: 24px;
+        background-color: white;
+        color: var(--color-boton-uno);
+        padding: 0px;
+    }
+}
+
+@media(max-width: 430px){
+    .contenedor{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .contenedor__entrada{
+        width: 100%;
+        padding: 0px 0px 0px 0px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .contenedor__entrada__botones{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contenedor__entrada__boton__encriptar, .contenedor__entrada__boton__desencriptar{
+        width: 343px;
+        height: 67px;
+        border: 1px solid var(--color-boton-uno);
+        font-size: 16px;
+        border-radius: 24px;
+        padding: 24px;
+    }
+
+    .contenedor__entrada__fondo{
+        width: 100%;
+        padding: 34px;
+    }
+
+    .contenedor__salida{
+        width: 90%;
+        padding: 40px 30px 40px 30px;
+    }
+
+    .contenedor__salida__fondo{
+        width: auto;
+        height: 343px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        border-radius: 32px;
+        padding: 10px 10px 10px 10px;
+        gap: 32px;
+    }
+
+    #texto-salida{
+        width: 624px;
+        height: 180px;
+        border: 1px solid white;
+        resize: none;
+    }
+
+    .contenedor__salida__fondo__boton{
+        width: 624px;
+        height: 67px;
+        border: 1px solid var(--color-boton-uno);
+        font-size: 24px;
+        border-radius: 24px;
+        background-color: white;
+        color: var(--color-boton-uno);
+        padding: 0px;
+    }
 }
