@@ -8,7 +8,11 @@ async function CargarMapas(){
     decrypMap = maps.desencriptaMapa;
 }
 
-//** Función que encripta el texto*/
+/**
+ * Encripta un texto utilizando un mapa de sustitución
+ * @param {string} txtInput 
+ * @returns {string} Texto encriptado 
+ */
 function encrypt(txtInput) {
     let encryptedText = '';
     for (let char of txtInput) {

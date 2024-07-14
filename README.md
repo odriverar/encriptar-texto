@@ -1,9 +1,28 @@
-# Encriptar, Desencriptar y Copiar Texto - JavaScript
+# Challenge: Encriptador de texto.
 
-Este proyecto contiene funciones en JavaScript para encriptar y desencriptar texto utilizando un mapa de sustitución, así como para copiar el texto encriptado o desencriptado al portapapeles del usuario.
+<p style="text-align: justify">Este proyecto contiene funciones en JavaScript para encriptar y desencriptar texto utilizando un mapa de sustitución, así como para copiar el texto encriptado o desencriptado al portapapeles del usuario.</p>
 
 ## Funcionalidades
 
 ### Encriptar Texto
 
-La función `encrypt(text)` toma un texto de entrada y utiliza un mapa de sustitución para reemplazar cada caracter según las reglas especificadas. Este mapa se carga desde un archivo `maps.json` para mantener la seguridad de la encriptación.
+<p style="text-align: justify">La función `encrypt(text)` toma un texto de entrada y utiliza un mapa de sustitución para reemplazar cada caracter según las reglas especificadas. Este mapa se carga desde un archivo `JSON/maps.json` para mantener la seguridad de la encriptación.</p>
+
+```javascript
+/**
+ * Encripta un texto utilizando un mapa de sustitución
+ * @param {string} txtInput 
+ * @returns {string} Texto encriptado 
+ */
+function encrypt(txtInput) {
+    let encryptedText = '';
+    for (let char of txtInput) {
+        if (encrypMap[char]) {
+            encryptedText += encrypMap[char];
+        } else {
+            encryptedText += char;
+        }
+    }
+    return encryptedText;
+}
+````
