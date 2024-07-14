@@ -126,6 +126,9 @@ function desencriptaTexto(){
       });
 }
 
+/**
+ * Copiar el texto en el portapapeles
+ */
 function copiarTexto(){
     const txtCopia = document.getElementById("texto-salida");
 
