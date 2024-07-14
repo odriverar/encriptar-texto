@@ -30,12 +30,32 @@ function encrypt(txtInput) {
 ### Desencriptar Texto
 <p style="text-align: justify">La función `decrypt(encryptedText)` realiza la operación inversa de `encrypt`, utilizando el mismo mapa de sustitución para restaurar el texto original.</p>
 
-``` python 
+``` javascript 
 /**
  * Desencripta un texto utilizando un mapa de sustitución
  * @param {string} encryptedText 
  * @returns {string} Texto desencriptado
  */
+function decrypt(encryptedText) {
+    let decryptedText = '';
+    let i = 0;
+
+    while (i < encryptedText.length) {
+        let found = false;
+        for (let key in decrypMap) {
+            if (encryptedText.startsWith(key, i)) {
+                decryptedText += decrypMap[key];
+                i += key.length;
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            decryptedText += encryptedText[i];
+            i++;
+        }
+    }
+    return decryptedText;
 }
 ```
 
