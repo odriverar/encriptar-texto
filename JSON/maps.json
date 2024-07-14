@@ -1,0 +1,17 @@
+{
+    "encriptaMapa": {
+      "a": "bour",
+      "e": "aour",
+      "i": "kias",
+      "o": "jugr",
+      "u": "kloi"
+    },
+
+    "desencriptaMapa": {
+      "bour": "a",
+      "aour": "e",
+      "kias": "i",
+      "jugr": "o",
+      "kloi": "u"
+    }
+  }  

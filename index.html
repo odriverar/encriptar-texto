@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encriptador</title>
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-    <header>
-    </header>
     <main class="contenedor">
         <div class="contenedor__logo"><img id="imagen-cabecera" src="./img/Logo.svg" alt="Logo de Alura"></div>
         <div class="contenedor__entrada">
@@ -19,24 +18,28 @@
                     <p class="contenedor__entrada__nota">Solo letras minúsculas y sin acentos</p>
                 </div>
                 <div class="contenedor__entrada__botones">
-                    <button class="contenedor__entrada__boton__encriptar">Encriptar</button>
-                    <button class="contenedor__entrada__boton__desencriptar">Desencriptar</button>
+                    <button onclick="encriptaTexto()" class="contenedor__entrada__boton__encriptar">Encriptar</button>
+                    <button onclick="desencriptaTexto()" class="contenedor__entrada__boton__desencriptar">Desencriptar</button>
                 </div>
             </div>
         </div>
         <div class="contenedor__salida">
             <div class="contenedor__salida__fondo">
-                <textarea name="Resultado" id="texto-salida" hidden></textarea>
-                <img id="imgResultado" src="./img/Muñeco.svg" alt="">
+                <textarea name="Resultado" id="texto-salida" readonly wrap="hard" hidden></textarea>
+                <img id="imgResultado" class="contenedor__salida__fondo__imagen" src="./img/Muñeco.svg" alt="">
 
-                <div>
+                <div id="grupo-mensaje">
                     <p class="contenedor__salida__fondo__txt1">Ningún mensaje fue encontrado</p>
                     <p class="contenedor__salida__fondo__txt2">Ingresa el texto que desees encriptar o desencriptar.</p>
                 </div>
-                <button class="contenedor__salida__fondo__boton" hidden>Copiar</button>
+                <button onclick="copiarTexto()" id="btnCopiar" class="contenedor__salida__fondo__boton" hidden>Copiar</button>
             </div>
         </div>
     </main>
-    <footer></footer>
+    <footer class="footer">
+        <p>Desarrollado por David Rivera Robles</p>
+    </footer>
+
+    <script src="./js/app.js"></script>
 </body>
 </html>
