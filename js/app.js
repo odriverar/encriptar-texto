@@ -25,6 +25,11 @@ function encrypt(txtInput) {
     return encryptedText;
 }
 
+/**
+ * Desencripta un texto utilizando un mapa de sustitución
+ * @param {string} encryptedText 
+ * @returns {string} Texto desencriptado
+ */
 function decrypt(encryptedText) {
     let decryptedText = '';
     let i = 0;
